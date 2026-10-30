@@ -209,5 +209,15 @@ Consider, for example, concepts of fariness, inequality, social structures, marg
 
 
 ```
-Your thoughts...
+When we think of data, computers, and governments, we are taught to believe they are completely neutral. But as Rida Qadri explains with the example of Pakistan's NADRA database, some hidden expectations built right into the code. Reading this made me think about my own country, India, and I couldn't help but draw parallels to system I always felt was "normal." 
+
+For example, in most digital forms, there are only two gender options to choose from (male or female), and almost every form mandatorily asks for a father’s or husband’s name. But what if someone comes from a broken family and prefers not to list a father's or husband's name, or identifies as transgender? 
+
+This possibly happens because systems like NADRA are built with strict rules such as that every person must be connected to two married parents. Like Riz’s mother, people get stuck in administrative loops simply because their lives do not fit what the database expects.
+
+As science students, we often treat a NULL value as something to be ignored or dropped because it looks incomplete. But we need to realize that missing information doesn't always mean bad or useless data, sometimes, human life just does not fit into a data field. While I understand that we need primary keys to uniquely identify each row, can we not design more flexible schemas? For example, instead of fewer mandatory fields, we could expand our number of keys, so we can uniquely identify individuals even in the absence of complete datasets. 
+
+In many other forms permanent address is a mandatory field. But what about migrants who keep moving around? Forcing an address makes it very difficult for them to access services. Similarly, using boolean-type data for gender is very limiting.
+
+Every human is unique and being a data science student, this reading made me realize that we need to think very deeply about our biases and edge cases. It is very crucial to plan our database schemas and data models carefully long before we start writing code, making sure that no one gets left out.
 ```

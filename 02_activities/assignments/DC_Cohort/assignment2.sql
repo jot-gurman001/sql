@@ -23,7 +23,7 @@ Edit the appropriate columns -- you're making two edits -- and the NULL rows wil
 All the other rows will remain the same. */
 --QUERY 1
 SELECT 
-product_name || ', ' || COALESCE(product_size, ' ') || ' (' || COALESCE(product_qty_type, 'unit') ||')'
+product_name || ', ' || COALESCE(product_size, '') || ' (' || COALESCE(product_qty_type, 'unit') ||')'
 FROM product;
 --END QUERY
 
@@ -149,14 +149,17 @@ How many customers are there (y).
 Before your final group by you should have the product of those two queries (x*y).  */
 --QUERY 8
 SELECT 
-v.vendor_name,
-p.product_name,
-SUM(5*vi.original_price) AS total_revenue
-FROM vendor_inventory as vi
+  v.vendor_name,
+  p.product_name,
+  SUM(5 * vi.original_price) AS total_revenue
+FROM (
+  SELECT DISTINCT vendor_id, product_id, original_price
+  FROM vendor_inventory
+) AS vi
 JOIN vendor v ON vi.vendor_id = v.vendor_id
 JOIN product p ON vi.product_id = p.product_id
 CROSS JOIN customer c
-GROUP BY v.vendor_name, p.product_name;
+GROUP BY v.vendor_name, p.product_name;   
 --END QUERY
 
 
